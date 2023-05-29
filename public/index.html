@@ -1,0 +1,139 @@
+<!doctype html>
+
+<!-- Some elements of this html page are from the Trimet Travel
+	Map project from UP 2023 Spring Software Engineering Course with
+	Professor Triblehorn. Silliman is a common developer of these projects
+	Repo link: https://github.com/upcs/cs341-spring-2023-trimet -->
+
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Load both our CSS file and the API's. -->
+		<link rel="stylesheet" href="/stylesheets/main.css" />
+		<!-- TODO: insert API's CSS file here -->
+
+		<!-- Before any other scripts, load jQuery and Leaflet. -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+		<!-- TODO: load API's here -->
+
+		<!-- Then, we can commence loading our scripts in order of usage.
+			First, we load the scripts with important utilities that most other
+			scripts depend on. -->
+		<!-- no scripts written yet -->
+
+	</head>
+
+	<body>
+		<!-- The whole main element of the page is a grid. Special content,
+			like dialogs, and hidden content are stored outside of the main
+			grid. -->
+		<main>
+			<!-- Top bar containing the title of the application and buttons
+				for pop-ups. -->
+			<div id="header-bg"></div>
+			<header id="header">
+				<h1 id="home" onclick="window.location.reload()">FastData</h1>
+				<nav id="info-links">
+					<button class="special" id="info-help">Help</button>
+					<button class="special" id="info-about">About Us</button>
+				</nav>
+			</header>
+			</div>
+
+			<div class="row">
+				<!-- new data point prompt window -->
+				<div class="column">
+					<h1 class="colHeads">New Data Point Prompt</h1>
+					<!-- single var prompt placeholder -->
+					<div class="var-prompt">
+						<!-- selector icon to show div is dragable -->
+						<form>
+							<!-- textbox to input a var name -->
+							<input type="text" name="var_name" value="Var Name">
+							<!-- selector for var type format -->
+							<select id="data_type">
+								<option value="torf">True or Flase</option>
+								<option value="txt">Text</option>
+								<option value="num">Number</option>
+								<option value="eq">Equation</option>
+								<option value="date">Date</option>
+								<option value="time">Time</option>
+								<option value="cur">Currency</option>
+								<option value="perc">Percentage</option>
+							</select>
+							<!-- textbox for var text prompt -->
+							<input type="text" name="prompt" value="Prompt">
+						</form>
+						<!-- menu (delete, make prompt dependent on prev [tab]) -->
+					</div>
+				</div>
+				<!-- dataset table window -->
+				<div class="column">
+					<h1 class="colHeads">Dataset Table</h1>
+				</div>
+				<!-- dataset viz window -->
+				<div class="column">
+					<h1 class="colHeads">Charts & Graphs</h1>
+				</div>
+			</div>
+
+		</main>
+
+
+
+		<!-- The container for holding modal dialog boxes. It will only be
+			shown when it has any child elements in it. -->
+		<div id="dialog-bg"></div>
+
+		<!-- The container for holding non-modal messages. It is invisible to
+			the user. -->
+		<div id="message-bg"></div>
+
+		<!-- We have a few HTML templates in here that can be displayed in
+			dialog boxes. We clone them with jQuery when they're necessary, but
+			these reference copies always stay entirely hidden from the user,
+			hence the use of the HTML "hidden" attribute. -->
+
+		<!-- The template defining an empty dialog box. Each dialog comes
+			built-in with a title bar, optional X button, optional button bar,
+			and a space for content. -->
+		<template id="tem-dialog">
+			<div class="dialog-box">
+				<div class="dialog-header">
+					<header class="dialog-title"></header>
+					<button class="special dialog-x">&#xD7;</button>
+				</div>
+				<section class="dialog-container">
+					<div class="dialog-content"></div>
+					<div class="dialog-buttons"></div>
+				</section>
+			</div>
+		</template>
+
+		<!-- The content of the About information box. -->
+		<template id="tem-about">
+			<p>This website was developed as a passion project in the Summer of 2023.
+			</p>
+		</template>
+
+		<!-- The content of the How-To information box. -->
+		<template id="tem-help">
+			<ul>
+				<li>No help is currently available
+				</li>
+			</ul>
+		</template>
+
+		<!-- The template defining an empty non-modal message bar. Message bars
+			come built in with space for small content and buttons. -->
+		<template id="tem-message">
+			<div class="message-box">
+				<div class="message-content"></div>
+				<div class="message-buttons"></div>
+			</div>
+		</template>
+
+	</body>
+</html>

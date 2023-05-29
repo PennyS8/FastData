@@ -1,0 +1,14 @@
+
+/* The following are from the Trimet Travel
+Map project from UP 2023 Spring Software Engineering Course with
+Professor Triblehorn. Silliman is a common developer of these projects
+Repo link: https://github.com/upcs/cs341-spring-2023-trimet --> */
+
+/* Contains variables defining the all the colors used in styling things. */
+@import "theme.css";
+/* Performs styling of generic elements and classes. */
+@import "generic.css";
+/* Defines the layout for the DataBase Viewer page. */
+@import "dbvLayout.css";
+/* Styles dialogs/messages and their associated elements. */
+@import "dialogs.css";

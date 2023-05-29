@@ -1,0 +1,21 @@
+/* Performs styling of generic elements and classes. */
+* {
+	box-sizing: border-box !important;
+}
+
+html, body {
+	font-family: "Arial", sans-serif;
+	font-size: var(--font-size);
+}
+
+p {
+	margin: 10px 0;
+}
+
+.flex-grow {
+	flex-grow: 1;
+}
+
+[data-hide] {
+	display: none;
+}
